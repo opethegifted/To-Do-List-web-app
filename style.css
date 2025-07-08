@@ -1,0 +1,266 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #f0f2f5, #dfe6e9);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2d3436;
+  font-size: 24px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  background-color: #0984e3;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #74b9ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f8f9fa;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #95a5a6;
+}
+
+span {
+  font-size: 16px;
+  flex: 1;
+}
+
+.due-date {
+  font-size: 13px;
+  color: #636e72;
+  margin-left: 6px;
+}
+
+.delete,
+.edit {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.delete {
+  color: red;
+}
+
+.edit {
+  color: blue;
+}
+
+li[draggable="true"] {
+  cursor: grab;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.filters button {
+  flex: 1;
+  background-color: #dfe6e9;
+  color: #2d3436;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #b2bec3;
+}
+
+/* Light is default — now add dark styles */
+body.dark {
+  background: linear-gradient(120deg, #2f3640, #353b48);
+}
+
+body.dark .container {
+  background: #2d3436;
+  color: #ffffff;
+}
+
+body.dark input,
+body.dark button {
+  background-color: #444;
+  color: white;
+  border: 1px solid #777;
+}
+
+body.dark .filters button {
+  background-color: #636e72;
+  color: white;
+}
+
+body.dark .filters button:hover {
+  background-color: #555;
+}
+
+body.dark .delete {
+  color: #ff6b6b;
+}
+
+body.dark .edit {
+  color: #74b9ff;
+}
+
+.theme-toggle {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#themeButton {
+  background-color: #dfe6e9;
+  color: #2d3436;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.dark #themeButton {
+  background-color: #636e72;
+  color: white;
+}
+#exportBtn {
+  background-color: #55efc4;
+  color: #2d3436;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#exportBtn:hover {
+  background-color: #00b894;
+  color: white;
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  button,
+  #exportBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters button {
+    margin-bottom: 6px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  span {
+    width: 100%;
+  }
+}
+#priorityInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+.priority {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+.priority.low {
+  background-color: #dff9fb;
+  color: #00b894;
+}
+.priority.medium {
+  background-color: #ffeaa7;
+  color: #fdcb6e;
+}
+.priority.high {
+  background-color: #fab1a0;
+  color: #d63031;
+}
